@@ -62,4 +62,3 @@ function generateCartDescription() {
 
   return `${cartDescription}.`
 }
-
