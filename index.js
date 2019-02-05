@@ -29,6 +29,8 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
+  var itemToRemove = searchCartForItemToRemove(itemName)
+  return itemToRemove ? removeItemFromCart(itemToRemove) : notifyUserThereIsNoItemToRemove()
 }
 
 function placeOrder(cardNumber) {
@@ -73,4 +75,13 @@ function sumUpPrices() {
     sum = sum + getCart()[i].itemPrice
   }
   return sum
+}
+
+
+function searchCartForItemToRemove(itemName) {
+  var searchResult
+  for (var i=0; i<getCart().length; i++) {
+    if (getCart()[i].itemName === itemName) {searchResult = getCart()[i]}
+  }
+  return searchResult
 }
